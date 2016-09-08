@@ -60,6 +60,7 @@ public class Fabric {
      * @return ArrayList of POJO
      */
     public ArrayList<PagePOJO> getJsonCollection(String filePath) {
+
         return gson.fromJson(readJson(filePath), collectionType);
     }
 }

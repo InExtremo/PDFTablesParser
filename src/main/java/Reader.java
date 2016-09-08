@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -5,7 +6,7 @@ import java.util.ArrayList;
  * Created by Max on 08.09.2016.
  */
 public class Reader {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         Fabric fabric = new Fabric();
         String string = fabric.readJson("tabula_1.json");
