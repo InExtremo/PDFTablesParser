@@ -47,8 +47,8 @@ public class GettingText {
     @Test
     public void getText() throws IOException {
         Page page = getAreaFromPage("C:\\Users\\Max\\Documents\\doc\\P2013.pdf", 8,
-                144.9999f, 77.00009f,
-                144.9999f + 406.91415f, 77.00009f + 126.20458f);
+                74.9578726196289f, 145.70892585754396f,
+                74.9578726196289f + 129.26408645629883f, 145.70892585754396f + 411.5034231567383f);
 
         SpreadsheetExtractionAlgorithm se = new SpreadsheetExtractionAlgorithm();
         boolean isTabular = se.isTabular(page);
@@ -64,5 +64,14 @@ public class GettingText {
         System.out.println(tables.get(0).getRows().size());
         System.out.println(tables.get(0).getCells().size());
         System.out.println(tables.get(0).getCell(1, 0).getText());
+        //        StringBuffer sb = new StringBuffer();
+//        sb.append("");
+//        System.out.println("tables.size(): "+tables.size());
+//        System.out.println("tables.get(0).getRows().size(): "+tables.get(0).getRows().size());
+//        System.out.println("tables.get(0).getCols().size(): "+tables.get(0).getCols().size());
+//        System.out.println("tables.get(0).getCells().size()): "+tables.get(0).getCells().size());
+//        System.out.println("tables.get(0).getCell(1,1).getText(): "+tables.get(0).getCell(1,1).getText());
+//        System.out.println("StringBuffer sbb: "+sb.toString());
+
     }
 }
