@@ -20,6 +20,7 @@
         </plugins>
     </build>
 
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>
@@ -40,6 +41,14 @@
             <version>LATEST</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/technology.tabula/tabula -->
+        <dependency>
+            <groupId>technology.tabula</groupId>
+            <artifactId>tabula</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
 
     </dependencies>
 
