@@ -1,4 +1,4 @@
-package tabulaTests;
+package com.gofetchcode.search.tabula.utils;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.junit.Test;

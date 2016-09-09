@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Max on 09.09.2016.
  */
-public class PdfUtils {
+public class TableParserUtils {
     /**
      * Generating collection of HTML Strings
      *

@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class FileUtils {
     /**
-     * Create json  String from File
+     * Create json  String from File.
      *
      * @param file File whit data
      * @return String with json
@@ -29,7 +29,7 @@ public class FileUtils {
     }
 
     /**
-     * Reading json from resource local path
+     * Reading json from resource local path.
      *
      * @param filePath path to file
      * @return String object of the text read
@@ -43,7 +43,7 @@ public class FileUtils {
     }
 
     /**
-     * Reading json from resource disk path
+     * Reading json from resource disk path.
      *
      * @param filePath path to file
      * @return String object of the text read
