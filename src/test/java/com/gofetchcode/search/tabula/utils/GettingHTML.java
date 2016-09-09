@@ -3,7 +3,6 @@ package com.gofetchcode.search.tabula.utils;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -15,15 +14,17 @@ public class GettingHTML {
     public void shouldReturnArray() {
         //Given:
         String jsonFile = "tabula_2.json";
-        String pdfFile = "src/test/res/pdf.pdf";
+        String pdfFile = "pdf.pdf";
         FileUtils fileWorker = new FileUtils();
-        ArrayList<String> strings = null;
+        String strings = "";
+        ClassLoader classLoader = getClass().getClassLoader();
         try {
-            strings = TableParserUtils.getHtmlFromJson(pdfFile, fileWorker.getJsonFromResource(jsonFile));
+            strings = TableParserUtils.getHtmlFromJson(classLoader.getResource(pdfFile).getFile(),
+                    fileWorker.getJsonFromResource(jsonFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        System.out.println(strings);
         assertNotNull("is return html: ", strings);
     }
 }

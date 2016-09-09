@@ -1,5 +1,17 @@
 [
   {
+    "page": 13,
+    "extraction_method": "spreadsheet",
+    "selection_id": "O1473420678785",
+    "x1": 59.00025939041134,
+    "x2": 571.4673477082824,
+    "y1": 578.016983047486,
+    "y2": 733.2868620452887,
+    "width": 512.4670883178711,
+    "height": 155.26987899780275,
+    "spec_index": 2
+  },
+  {
     "page": 14,
     "extraction_method": "spreadsheet",
     "selection_id": "O1473337342013",

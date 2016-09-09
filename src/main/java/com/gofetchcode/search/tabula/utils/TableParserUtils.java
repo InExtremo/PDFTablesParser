@@ -26,7 +26,7 @@ public class TableParserUtils {
      * @return collection of HTML Strings
      * @throws IOException was throw when PDF file not found at disk
      */
-    public static ArrayList<String> getHtmlFromJson(String filePath, String jsonObj) throws IOException {
+    public static String getHtmlFromJson(String filePath, String jsonObj) throws IOException {
         Gson gson = new Gson();
         Type collectionType = new TypeToken<ArrayList<PageMeta>>() {
         }.getType();
@@ -66,6 +66,8 @@ public class TableParserUtils {
             if (oe != null)
                 oe.close();
         }
-        return html;
+
+        String json = gson.toJson(html);
+        return json;
     }
 }
