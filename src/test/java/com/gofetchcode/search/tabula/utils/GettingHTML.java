@@ -13,7 +13,7 @@ public class GettingHTML {
     @Test
     public void shouldReturnArray() {
         //Given:
-        String jsonFile = "tabula_2.json";
+        String jsonFile = "wj.json";
         String pdfFile = "pdf.pdf";
         FileUtils fileWorker = new FileUtils();
         String strings = "";

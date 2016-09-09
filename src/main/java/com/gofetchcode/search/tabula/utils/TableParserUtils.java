@@ -7,6 +7,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import technology.tabula.ObjectExtractor;
 import technology.tabula.Page;
 import technology.tabula.Table;
+import technology.tabula.extractors.BasicExtractionAlgorithm;
 import technology.tabula.extractors.SpreadsheetExtractionAlgorithm;
 
 import java.io.IOException;
@@ -42,9 +43,14 @@ public class TableParserUtils {
                         .getArea(
                                 obj.getY1(), obj.getX1(),
                                 obj.getY1() + obj.getHeight(), obj.getX1() + obj.getWidth());
-                SpreadsheetExtractionAlgorithm se = new SpreadsheetExtractionAlgorithm();
-
-                List<? extends Table> tables = se.extract(page);
+                List<? extends Table> tables;
+                if (obj.getExtractionMethod().equals("spreadsheet")) {
+                    SpreadsheetExtractionAlgorithm se = new SpreadsheetExtractionAlgorithm();
+                    tables = se.extract(page);
+                } else {
+                    BasicExtractionAlgorithm bea = new BasicExtractionAlgorithm();
+                    tables = bea.extract(page);
+                }
 
                 tables.forEach(table -> {
                     StringBuilder sb = new StringBuilder();
