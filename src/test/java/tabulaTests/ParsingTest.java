@@ -1,7 +1,7 @@
 package tabulaTests;
 
-import com.gofetchcode.search.tabula.workers.FileWorker;
-import com.gofetchcode.search.tabula.workers.JsonWorker;
+import com.gofetchcode.search.tabula.utils.FileUtils;
+import com.gofetchcode.search.tabula.utils.JsonUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -31,7 +31,7 @@ public class ParsingTest {
                 ":17,\"extraction_method\":\"spreadsheet\",\"selection_id\":\"I1473338069607\",\"x1\"" +
                 ":59.00025939041134,\"x2\":571.4673477082824,\"y1\":403.0132967681882,\"y2\"" +
                 ":665.3658509368894,\"width\":512.4670883178711,\"height\":262.35255416870115,\"spec_index\":5}]";
-        FileWorker fileWorker = new FileWorker();
+        FileUtils fileWorker = new FileUtils();
         assertNotNull("Return array", fileWorker.getJsonFromFile(givenJson));
 
         String json = fileWorker.getJsonFromResource("tabula_1.json");
@@ -58,21 +58,21 @@ public class ParsingTest {
                 ":17,\"extraction_method\":\"spreadsheet\",\"selection_id\":\"I1473338069607\",\"x1\"" +
                 ":59.00025939041134,\"x2\":571.4673477082824,\"y1\":403.0132967681882,\"y2\"" +
                 ":665.3658509368894,\"width\":512.4670883178711,\"height\":262.35255416870115,\"spec_index\":5}]";
-        FileWorker fileWorker = new FileWorker();
-        assertNotNull("Return array", JsonWorker.getJsonCollection(givenJson));
+        FileUtils fileWorker = new FileUtils();
+        assertNotNull("Return array", JsonUtils.getJsonCollection(givenJson));
 
         String json = fileWorker.getJsonFromResource("tabula_1.json");
     }
 
     @Test
     public void shouldParseJsonFromFilePath() throws Exception {
-        FileWorker fileWorker = new FileWorker();
-        assertNotNull("Return array", JsonWorker.getJsonCollection(fileWorker.getJsonFromFile("C:\\lib\\file.json")));
+        FileUtils fileWorker = new FileUtils();
+        assertNotNull("Return array", JsonUtils.getJsonCollection(fileWorker.getJsonFromFile("C:\\lib\\file.json")));
     }
 
     @Test(expected = Exception.class)
     public void shouldNotFoundFile() throws Exception {
-        JsonWorker jsonWorker = new JsonWorker();
+        JsonUtils jsonWorker = new JsonUtils();
         assertNotNull("Return array", jsonWorker.getJsonCollection("ss"));
     }
 

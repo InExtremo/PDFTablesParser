@@ -1,4 +1,4 @@
-package com.gofetchcode.search.tabula.POJOs;
+package com.gofetchcode.search.tabula.bean;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 
-public class PagePOJO {
+public class PageMeta {
     @SerializedName("page")
     private final int page;
     @SerializedName("extraction_method")
@@ -35,7 +35,7 @@ public class PagePOJO {
      * @param height           height of our Rectangle from Y
      */
     //TODO make builder
-    public PagePOJO(int page, String extractionMethod,
+    public PageMeta(int page, String extractionMethod,
                     String selectionId, float x1, float y1,
                     float width, float height) {
         this.page = page;

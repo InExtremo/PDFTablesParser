@@ -1,6 +1,6 @@
-package com.gofetchcode.search.tabula.workers;
+package com.gofetchcode.search.tabula.utils;
 
-import com.gofetchcode.search.tabula.POJOs.PagePOJO;
+import com.gofetchcode.search.tabula.bean.PageMeta;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Max on 09.09.2016.
  */
-public class PdfWoker {
+public class PdfUtils {
     /**
      * Generating collection of HTML Strings
      *
@@ -28,16 +28,16 @@ public class PdfWoker {
      */
     public static ArrayList<String> getHtmlFromJson(String filePath, String jsonObj) throws IOException {
         Gson gson = new Gson();
-        Type collectionType = new TypeToken<ArrayList<PagePOJO>>() {
+        Type collectionType = new TypeToken<ArrayList<PageMeta>>() {
         }.getType();
         ArrayList<String> html = new ArrayList<>();
-        ArrayList<PagePOJO> pagePOJOs = gson.fromJson(jsonObj, collectionType);
+        ArrayList<PageMeta> pageMetas = gson.fromJson(jsonObj, collectionType);
         ObjectExtractor oe = null;
         try {
             PDDocument document = PDDocument
                     .load(filePath);
             oe = new ObjectExtractor(document);
-            for (PagePOJO obj : pagePOJOs) {
+            for (PageMeta obj : pageMetas) {
                 Page page = oe.extract(obj.getPage())
                         .getArea(
                                 obj.getY1(), obj.getX1(),

@@ -1,7 +1,7 @@
 package tabulaTests;
 
-import com.gofetchcode.search.tabula.workers.FileWorker;
-import com.gofetchcode.search.tabula.workers.PdfWoker;
+import com.gofetchcode.search.tabula.utils.FileUtils;
+import com.gofetchcode.search.tabula.utils.PdfUtils;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -18,10 +18,10 @@ public class GettingHTML {
         //Given:
         String jsonFile = "tabula_2.json";
         String pdfFile = "src/test/res/pdf.pdf";
-        FileWorker fileWorker = new FileWorker();
+        FileUtils fileWorker = new FileUtils();
         ArrayList<String> strings = null;
         try {
-            strings = PdfWoker.getHtmlFromJson(pdfFile, fileWorker.getJsonFromResource(jsonFile));
+            strings = PdfUtils.getHtmlFromJson(pdfFile, fileWorker.getJsonFromResource(jsonFile));
         } catch (IOException e) {
             e.printStackTrace();
         }
