@@ -1,3 +1,5 @@
+package tabulaTests;
+
 import com.gofetchcode.search.tabula.workers.FileWorker;
 import com.gofetchcode.search.tabula.workers.PdfWoker;
 import org.junit.Test;
