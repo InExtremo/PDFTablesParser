@@ -1,4 +1,4 @@
-package com.gofetchcode.search.tabula.workers;
+package com.gofetchcode.search.tabula.utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Max on 09.09.2016.
  */
-public class FileWorker {
+public class FileUtils {
     /**
      * Create json  String from File
      *
