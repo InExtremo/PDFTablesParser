@@ -1,10 +1,10 @@
 import com.google.gson.annotations.SerializedName;
 
-import java.awt.*;
-
 /**
  * Created by Max on 08.09.2016.
  */
+
+
 public class PagePOJO {
     @SerializedName("page")
     private final int page;
@@ -13,13 +13,13 @@ public class PagePOJO {
     @SerializedName("selection_id")
     private final String selectionId;
     @SerializedName("x1")
-    private final double x1;
+    private final float x1;
     @SerializedName("y1")
-    private final double y1;
+    private final float y1;
     @SerializedName("width")
-    private final double width;
+    private final float width;
     @SerializedName("height")
-    private final double height;
+    private final float height;
 
     /**
      * Constructor with params
@@ -32,9 +32,10 @@ public class PagePOJO {
      * @param width            with of our Rectangle from X
      * @param height           height of our Rectangle from Y
      */
+    //TODO make builder
     public PagePOJO(int page, String extractionMethod,
-                    String selectionId, double x1, double y1,
-                    double width, double height) {
+                    String selectionId, float x1, float y1,
+                    float width, float height) {
         this.page = page;
         this.extractionMethod = extractionMethod;
         this.selectionId = selectionId;
@@ -62,19 +63,19 @@ public class PagePOJO {
         return selectionId;
     }
 
-    public double getX1() {
+    public float getX1() {
         return x1;
     }
 
-    public double getY1() {
+    public float getY1() {
         return y1;
     }
 
-    public double getWidth() {
+    public float getWidth() {
         return width;
     }
 
-    public double getHeight() {
+    public float getHeight() {
         return height;
     }
 

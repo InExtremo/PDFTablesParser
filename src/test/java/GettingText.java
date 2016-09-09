@@ -39,16 +39,16 @@ public class GettingText {
 //        page: 7
 //        extraction model: spreadsheet
 //        selectonID: K1473338066220
-//        x1: 164.9998697895813 //top                   left
-//        y1:205.0021328521732  //left                  top
+//        x1: 164.9998697895813 //                      left
+//        y1:205.0021328521732  //                      top
 //        width:406.1492893981934  //top+width = x2     right
 //        height:545.3567671203614 //left+height = y2   bottom
 //    }
     @Test
     public void getText() throws IOException {
-        Page page = getAreaFromPage("C:\\Users\\Max\\Documents\\doc\\p.pdf", 7,
-                205.0021328521732f, 164.9998697895813f,
-                750.3588999725346f, 571.1491591877747f);
+        Page page = getAreaFromPage("C:\\Users\\Max\\Documents\\doc\\P2013.pdf", 8,
+                144.9999f, 77.00009f,
+                144.9999f + 406.91415f, 77.00009f + 126.20458f);
 
         SpreadsheetExtractionAlgorithm se = new SpreadsheetExtractionAlgorithm();
         boolean isTabular = se.isTabular(page);
@@ -60,5 +60,9 @@ public class GettingText {
         System.out.println(sb.toString());
         // SpreadsheetExtractionAlgorithm.findCells(page.getHorizontalRulings(), page.getVerticalRulings());
         // System.out.println( SpreadsheetExtractionAlgorithm.findCells(page.getHorizontalRulings(), page.getVerticalRulings()));
+        System.out.println(tables.get(0).getCols().size());
+        System.out.println(tables.get(0).getRows().size());
+        System.out.println(tables.get(0).getCells().size());
+        System.out.println(tables.get(0).getCell(1, 0).getText());
     }
 }
